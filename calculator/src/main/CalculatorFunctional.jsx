@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Calculator.css'
 
 import Button from '../components/Button'
@@ -21,8 +21,6 @@ export default props => {
     }
 
     const getOperation = (op) => {
-        console.log("displayValue", displayValue)
-        console.log("values", values)
         if( currentIndex === 0) {
             setOperation(op)
             setCurrentIndex(1)
@@ -58,16 +56,10 @@ export default props => {
 
         if (n !== '.') {
             const i = currentIndex
-            console.log("INDEX = ", i)
-            const newValue = parseFloat(displayValue)
-            const newValues = [...values]
+            const newValue = parseFloat(newDisplayValue)
+            const newValues = values
             newValues[i] = newValue
             setValues(newValues)
-            console.log("newValues[0]", newValues[i])
-            console.log("newValues", [...newValues])
-            console.log("values = ", values)
-            // console.log("displayValue = ", displayValue)
-            // console.log("newValues = ", newValues)
         }  
     }
 
