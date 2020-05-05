@@ -87,18 +87,18 @@ export default class Calculator extends Component {
                 <Button label="7" click={this.addDigit}/>
                 <Button label="8" click={this.addDigit}/>
                 <Button label="9" click={this.addDigit}/>
-                <Button label="*" click={this.addDigit} operation={true}/>
+                <Button label="*" click={this.setOperation} operation={true}/>
                 <Button label="4" click={this.addDigit}/>
                 <Button label="5" click={this.addDigit}/>
                 <Button label="6" click={this.addDigit}/>
-                <Button label="-" click={this.addDigit} operation={true}/>
+                <Button label="-" click={this.setOperation} operation={true}/>
                 <Button label="1" click={this.addDigit}/>
                 <Button label="2" click={this.addDigit}/>
                 <Button label="3" click={this.addDigit}/>
-                <Button label="+" click={this.addDigit} operation={true}/>
+                <Button label="+" click={this.setOperation} operation={true}/>
                 <Button label="0" click={this.addDigit} double/>
                 <Button label="." click={this.addDigit}/>
-                <Button label="=" click={this.addDigit} operation={true}/>
+                <Button label="=" click={this.setOperation} operation={true}/>
             </div>
         )
     }
