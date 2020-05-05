@@ -51,9 +51,7 @@ export default props => {
         const newClearDisplay = displayValue === '0' || clearDisplay
         const currentValue = newClearDisplay ? '' : displayValue
         const newDisplayValue = currentValue + n
-        setDisplayValue(newDisplayValue)
-        setClearDisplay(false)
-
+        
         if (n !== '.') {
             const i = currentIndex
             const newValue = parseFloat(newDisplayValue)
@@ -61,6 +59,8 @@ export default props => {
             newValues[i] = newValue
             setValues(newValues)
         }  
+        setDisplayValue(newDisplayValue)
+        setClearDisplay(false)
     }
 
     return(
