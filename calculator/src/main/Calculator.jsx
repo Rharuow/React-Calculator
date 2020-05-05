@@ -29,6 +29,8 @@ export default class Calculator extends Component {
 
     setOperation(operation) {
         if( this.state.current === 0) {
+            console.log("displayValue = ", this.state.displayValue)
+            console.log("values = ", this.state.values)
             this.setState({
                 operation,
                 current: 1,
@@ -69,11 +71,14 @@ export default class Calculator extends Component {
 
         if (n !== '.') {
             const i = this.state.current
+            console.log("displayValue = ", this.state.displayValue)
             const newValue = parseFloat(displayValue)
             const values = [...this.state.values]
             values[i] = newValue
             this.setState({ values })
+            console.log("values = ", this.state.values)
         }
+
 
     }
     
@@ -83,22 +88,22 @@ export default class Calculator extends Component {
             <div className="calculator">
                 <Display value={this.state.displayValue} />
                 <Button label="AC" click={this.clearMemory} triple/>
-                <Button label="/" operation click={this.clearMemory}/>
+                <Button label="/" click={this.setOperation} operation/>
                 <Button label="7" click={this.addDigit}/>
                 <Button label="8" click={this.addDigit}/>
                 <Button label="9" click={this.addDigit}/>
-                <Button label="*" click={this.setOperation} operation={true}/>
+                <Button label="*" click={this.setOperation} operation/>
                 <Button label="4" click={this.addDigit}/>
                 <Button label="5" click={this.addDigit}/>
                 <Button label="6" click={this.addDigit}/>
-                <Button label="-" click={this.setOperation} operation={true}/>
+                <Button label="-" click={this.setOperation} operation/>
                 <Button label="1" click={this.addDigit}/>
                 <Button label="2" click={this.addDigit}/>
                 <Button label="3" click={this.addDigit}/>
-                <Button label="+" click={this.setOperation} operation={true}/>
+                <Button label="+" click={this.setOperation} operation/>
                 <Button label="0" click={this.addDigit} double/>
                 <Button label="." click={this.addDigit}/>
-                <Button label="=" click={this.setOperation} operation={true}/>
+                <Button label="=" click={this.setOperation} operation/>
             </div>
         )
     }

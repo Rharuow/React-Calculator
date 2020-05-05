@@ -9,6 +9,7 @@ ReactDOM.render(
   <div>
     <h1>Calculator</h1>
     <CalculatorFunctional />
+    {/* <Calculator/> */}
   </div>
 ,
   document.getElementById('root')
